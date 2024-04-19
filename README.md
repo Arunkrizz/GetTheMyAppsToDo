@@ -5,7 +5,7 @@
 (.env ====> NODE_ENV = development)
 In the project directory, you can run: 
 
-## `npm run dev `
+### `npm run dev `
 
 Runs the app in the development mode.\
 
