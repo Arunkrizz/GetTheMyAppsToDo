@@ -5,6 +5,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import path from 'path'
 dotenv.config();
 
 
@@ -48,9 +49,9 @@ app.use(express.urlencoded({ extended: true })); // Form Data parser Middleware 
 
 if(process.env.NODE_ENV==='production'){
     const __dirname= path.resolve() 
-    app.use(express.static(path.join(__dirname,'../frontend/dist')))
+    app.use(express.static(path.join(__dirname,'Frontend/build')))
 
-    app.get('*',(req,res)=>res.sendFile(path.resolve(__dirname,'..','frontend','dist','index.html')))
+    app.get('*',(req,res)=>res.sendFile(path.resolve(__dirname,'Frontend','build','index.html')))
 }else{
 
 //? ===================== Application Home Route =====================
