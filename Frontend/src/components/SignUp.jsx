@@ -46,8 +46,6 @@ function SignUp() {
         if (response.data.error) {
           toast.error(response.data.error)
         } else {
-
-          console.log(response.data)
           navigate('/')
         }
       })

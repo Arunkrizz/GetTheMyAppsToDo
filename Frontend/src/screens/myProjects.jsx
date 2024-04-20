@@ -59,7 +59,6 @@ function MyProjects() {
         status: status
       }).then((response) => {
         setTodos(response.data.todos);
-        console.log("response myprojects:", response.data.todos);
       });
 
 
@@ -74,7 +73,6 @@ function MyProjects() {
         id: userInfo.id
       }).then((response) => {
         setMyProjects(response.data.projects);
-        console.log("response myprojects:", response.data.projects);
       });
       axios.post('http://localhost:5000/api/MyToDo/MyTodos', {
         id: userInfo.id
@@ -105,7 +103,6 @@ function MyProjects() {
   ////////////////////////////addToDo////////////////////////////
 
   const HandleAddToDo = (description) => {
-    console.log("selectedProject:", selectedProject);
     axios.post('http://localhost:5000/api/MyToDo/addNewToDO', {
       id: userInfo.id,
       projectId: selectedProject,
@@ -127,7 +124,6 @@ function MyProjects() {
         projectId: projectId,
       }).then((response) => {
         setTodos(response.data.todos);
-        console.log("response tododeleted:", response.data.todos);
       });
 
 

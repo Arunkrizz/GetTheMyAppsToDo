@@ -16,7 +16,6 @@ const authUser = asyncHandler ( async (req, res) => {
     */
      
     const { email, password } = req.body;
-    console.log( email, password,"body")
 
     if ( !email || !password ) {
 
@@ -202,7 +201,6 @@ const addNewProject = asyncHandler( async(req,res)=>{
 
     const todos = await Todo.find({user:req.body.id})
 
-    console.log("checked status",req.body,todos)
     res.json({todos:todos})
    })
 
